@@ -1,14 +1,16 @@
 'use strict';
 
 let num = 266219,
+    numArray = [],
     numMult;
 
 num = num.toString(); // преобразую в строку, чтобы достать цифры по-отдельности
-numMult = +num[0]; // помещаю первую цифру, преобразовав ее в число
-
-for (let i = 1; i < 6; i++) {
-  numMult *= +num[i]; // перемножаю на другие цифры, преобразовывая их в числа
+ 
+for (let i = 0; i < 6; i++) {
+  numArray.push(+num[i]); // заполняю массив цифрами, преобразуя их в числа
 }
+numMult = numArray.reduce((accumulator, currentValue) => accumulator * currentValue); // перемножаю
+
 console.log(numMult);
 
 numMult **= 3; // возвожу в 3 степень
