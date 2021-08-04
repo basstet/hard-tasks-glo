@@ -2,9 +2,9 @@
 
 const cutText = function(textToCut) {
   if (typeof textToCut === 'string') {
-    if (textToCut.length > 30) {
+    if (textToCut.trim().length > 30) {
       // удаляем пробелы, обрезаем текст и добавляем многоточие:
-      return textToCut.trim().substr(0, 30).padEnd(33, '.');
+      return textToCut.trim().substr(0, 30) + `...`;
     } else {
       // удаляем пробелы:
       return textToCut.trim();
