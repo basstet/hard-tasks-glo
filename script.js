@@ -1,7 +1,7 @@
 'use strict';
 
 const week = ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье'];
-const today = new Date().getDay();
+const today = new Date().toLocaleString('ru', {weekday: 'long'});
 console.log(today);
 
 const ul = document.createElement('ul');
@@ -14,7 +14,7 @@ for (let item of week) {
   if (item === 'Суббота' || item === 'Воскресенье') {
     li.style.fontStyle = 'italic';
   }
-  if ((week.indexOf(item) + 1) === today || today === 0 && item === 'Воскресенье') {
+  if (item.toLowerCase() === today) {
     li.style.fontWeight = 'bold';
   }
 }
