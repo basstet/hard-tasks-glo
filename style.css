@@ -2,14 +2,16 @@ body {
   background-color: #94d8c4;
   font-size: 10px;
   font-family: Arial, Helvetica, sans-serif;
+  color: #fff;
 }
 .wrapper {
-  text-align: center;
+  padding: 0 2rem;
 }
-.color {
-  font-size: 3.1rem;
+.title {
+  font-size: 3rem;
   color: #fff;
-  margin: 10% 0 1rem;
+  margin: 5% 0 1rem;
+  padding: 0;
 }
 .btn {
   border: none;
@@ -17,10 +19,31 @@ body {
   background: #fff;
   color: #94d8c4;
   font-weight: bold;
-  font-size: 2rem;
+  font-size: 1.4rem;
   padding: 1rem;
   cursor: pointer;
+  margin: 0 0.5rem 1rem 0;
 }
 .btn:hover {
   opacity: 0.9;
+}
+.user-list p {
+  font-size: 1rem;
+  position: relative;
+  padding-left: 1.2rem;
+  margin-left: -1.2rem;
+}
+.user-list span {
+  display: inline-block;
+  position: absolute;
+  width: 1rem;
+  height: 1rem;
+  left: 0;
+  line-height: 1.1rem;
+  color: #ff6b6b;
+  cursor: pointer;
+  visibility: hidden;
+}
+.user-list p:hover span {
+  visibility: visible;
 }
