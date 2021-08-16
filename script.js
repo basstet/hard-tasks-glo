@@ -79,15 +79,19 @@ const logInUser = function() {
         userStoredData = JSON.parse(localStorage.getItem('userData'));
   let isRegistered = false;
   
-  userStoredData.forEach(function(item) {
-    if (item.login === enteredLogin && item.password === enteredPassword) {
-      // вставить имя в приветствие:
-      titleName.textContent = item.firstName;
-      isRegistered = true;
-      return;
+  if (userStoredData) {
+    userStoredData.forEach(function(item) {
+      if (item.login === enteredLogin && item.password === enteredPassword) {
+        // вставить имя в приветствие:
+        titleName.textContent = item.firstName;
+        isRegistered = true;
+        return;
+      }
+    });
+    if (!isRegistered) {
+      alert(`Пользователь не найден`);
     }
-  });
-  if (!isRegistered) {
+  } else {
     alert(`Пользователь не найден`);
   }
 };
